@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>CSS3 Split Buttons</title>
+<meta charset="utf-8">
+<style>
+body{
+	margin: 0;
+	text-align: center;
+	background-image: -webkit-gradient(linear, left center, right center, from(#E0E9F5), color-stop(50%, #FDFDFE), to(#E0E9F5));
+}
+
+h1, h3{
+	color: #fff;
+	font-weight: bold;
+	font-family: Helvetica, Arial;
+	text-shadow: 0 0 5px #777;
+}
+
+h3{
+	margin: 25px 0 0;
+	text-shadow: 0 0 2px #555;
+}
+
+.button{
+	display: inline-block;
+    white-space: nowrap;
+    background-color: #ccc;
+    padding: 0 25px;
+    margin: 8px;
+    font: bold 16px/30px Arial, Helvetica;
+    text-decoration: none;
+    color: #333;
+    text-shadow: 0 1px 0 rgba(255,255,255,.8);
+	border-radius: 6px;
+	border-top: 1px solid #fff;
+	box-shadow: 0 0 0 1px #bbb;
+	background-image: linear-gradient(bottom, rgb(220,220,220) 50%, rgb(235,235,235) 50%);
+	background-image: -o-linear-gradient(bottom, rgb(220,220,220) 50%, rgb(235,235,235) 50%);
+	background-image: -moz-linear-gradient(bottom, rgb(220,220,220) 50%, rgb(235,235,235) 50%);
+	background-image: -webkit-linear-gradient(bottom, rgb(220,220,220) 50%, rgb(235,235,235) 50%);
+	background-image: -ms-linear-gradient(bottom, rgb(220,220,220) 50%, rgb(235,235,235) 50%);
+	
+	background-image: -webkit-gradient(
+		linear,
+		left bottom,
+		left top,
+		color-stop(0.5, rgb(220,220,220)),
+		color-stop(0.5, rgb(235,235,235))
+	);
+}
+
+.button:hover{box-shadow: 0 0 0 1px #bbb, inset 0 0 5px 5px rgba(255,255,255,.5);}
+
+.button:hover:before{background: rgba(0,0,0,.05);}
+
+.button:active{	
+	box-shadow: 0 0 0 1px #bbb, 0 -1px 0 1px #ddd, inset 0 0 5px 2px #eee;
+	position: relative;
+	top: 1px;
+}
+
+.button:before{
+	background: rgba(0,0,0,.07);
+	float: left;
+	width: 25px;
+	text-align: center;
+	font-size: 25px;
+	margin: 0 20px 0 -25px;
+	padding: 0 4px;
+	box-shadow: 1px 0 0 #fff, 2px 0 0 #bbb;
+	/* -webkit-border-radius: 6px 0 0 6px; */
+	pointer-events: none;
+}
+
+
+.delete:before{content: "\2718";}
+.save:before{content: "\2714";}
+.arrow:before{content: "\279C";}
+
+.button.lime{
+	color: #030;
+	box-shadow: 0 0 0 1px #99ba45;
+	background-image: linear-gradient(bottom, rgb(221,232,194) 50%, rgb(233,239,212) 50%);
+	background-image: -o-linear-gradient(bottom, rgb(221,232,194) 50%, rgb(233,239,212) 50%);
+	background-image: -moz-linear-gradient(bottom, rgb(221,232,194) 50%, rgb(233,239,212) 50%);
+	background-image: -webkit-linear-gradient(bottom, rgb(221,232,194) 50%, rgb(233,239,212) 50%);
+	background-image: -ms-linear-gradient(bottom, rgb(221,232,194) 50%, rgb(233,239,212) 50%);
+	
+	background-image: -webkit-gradient(
+		linear,
+		left bottom,
+		left top,
+		color-stop(0.5, rgb(221,232,194)),
+		color-stop(0.5, rgb(233,239,212))
+	);
+}
+.button.lime:hover{box-shadow: 0 0 0 1px #99ba45, inset 0 0 5px 2px rgba(130,173,27,.15);}
+.button.lime:active{box-shadow: 0 0 0 1px #99ba45, 0 -1px 0 1px #cbddb9, inset 0 0 5px 2px rgba(130,173,27,.15);}
+.button.lime:before{box-shadow: 1px 0 0 #fff, 2px 0 0 #99ba45;}
+
+
+.button.red{
+	color: #300;
+	box-shadow: 0 0 0 1px #ba4545;
+	background-image: linear-gradient(bottom, rgb(232,194,194) 50%, rgb(239,212,212) 50%);
+	background-image: -o-linear-gradient(bottom, rgb(232,194,194) 50%, rgb(239,212,212) 50%);
+	background-image: -moz-linear-gradient(bottom, rgb(232,194,194) 50%, rgb(239,212,212) 50%);
+	background-image: -webkit-linear-gradient(bottom, rgb(232,194,194) 50%, rgb(239,212,212) 50%);
+	background-image: -ms-linear-gradient(bottom, rgb(232,194,194) 50%, rgb(239,212,212) 50%);
+	
+	background-image: -webkit-gradient(
+		linear,
+		left bottom,
+		left top,
+		color-stop(0.5, rgb(232,194,194)),
+		color-stop(0.5, rgb(239,212,212))
+	);
+}
+.button.red:hover{box-shadow: 0 0 0 1px #ba4545, inset 0 0 5px 2px rgba(104,14,14,.1);}
+.button.red:active{box-shadow: 0 0 0 1px #ba4545, 0 -1px 0 1px #eacdcd, inset 0 0 5px 2px rgba(104,14,14,.15);}
+.button.red:before{box-shadow: 1px 0 0 #fff, 2px 0 0 #ba4545;}
+
+
+.button.blue{
+	color: #036;
+	box-shadow: 0 0 0 1px #459bba;
+	background-image: linear-gradient(bottom, rgb(194,222,232) 50%, rgb(212,232,239) 50%);
+	background-image: -o-linear-gradient(bottom, rgb(194,222,232) 50%, rgb(212,232,239) 50%);
+	background-image: -moz-linear-gradient(bottom, rgb(194,222,232) 50%, rgb(212,232,239) 50%);
+	background-image: -webkit-linear-gradient(bottom, rgb(194,222,232) 50%, rgb(212,232,239) 50%);
+	background-image: -ms-linear-gradient(bottom, rgb(194,222,232) 50%, rgb(212,232,239) 50%);
+	
+	background-image: -webkit-gradient(
+		linear,
+		left bottom,
+		left top,
+		color-stop(0.5, rgb(194,222,232)),
+		color-stop(0.5, rgb(212,232,239))
+	);
+}
+.button.blue:hover{box-shadow: 0 0 0 1px #459bba, inset 0 0 5px 5px rgba(255,255,255,.2);}
+.button.blue:active{box-shadow: 0 0 0 1px #459bba, 0 -1px 0 1px #cae3ec, inset 0 0 5px 5px rgba(220,220,220,.5);}
+.button.blue:before{box-shadow: 1px 0 0 #fff, 2px 0 0 #459bba;}
+</style>
+</head>
+<body>
+
+	<h1>CSS3 Split Buttons</h1>	
+	
+	<a href="" class="button">Button</a>
+	<a href="" class="button delete">Delete</a>
+	<a href="" class="button save">Save</a>
+	<a href="" class="button arrow">Arrow</a>
+	
+	<h3>Lime Buttons</h3>
+	<a href="" class="button lime">Button</a>
+	<a href="" class="button lime delete">Delete</a>
+	<a href="" class="button lime save">Save</a>
+	<a href="" class="button lime arrow">Arrow</a>
+	
+	<h3>Red Buttons</h3>
+	<a href="" class="button red">Button</a>
+	<a href="" class="button red delete">Delete</a>
+	<a href="" class="button red save">Save</a>
+	<a href="" class="button red arrow">Arrow</a>
+
+	
+	<h3>Blue Buttons</h3>
+	<a href="" class="button blue">Button</a>
+	<a href="" class="button blue delete">Delete</a>
+	<a href="" class="button blue save">Save</a>
+	<a href="" class="button blue arrow">Arrow</a>
+
+</body>
+</html>
