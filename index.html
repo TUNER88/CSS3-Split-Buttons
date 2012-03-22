@@ -1,88 +1,176 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset='utf-8'>
+<title>CSS3 Split Buttons</title>
+<meta charset="utf-8">
+<style>
+body{
+  margin: 0;
+	text-align: center;
+	background-image: -webkit-gradient(linear, left center, right center, from(#E0E9F5), color-stop(50%, #FDFDFE), to(#E0E9F5));
+}
 
-  <title>TUNER88/CSS3-Split-Buttons @ GitHub</title>
+h1, h3{
+	color: #fff;
+	font-weight: bold;
+	font-family: Helvetica, Arial;
+	text-shadow: 0 0 5px #777;
+}
 
-  <style type="text/css">
-    body {
-      margin-top: 1.0em;
-      background-color: #ccc;
-      font-family: Helvetica, Arial, FreeSans, san-serif;
-      color: #ffffff;
-    }
-    #container {
-      margin: 0 auto;
-      width: 700px;
-    }
-    h1 { font-size: 3.8em; color: #6bf17b; margin-bottom: 3px; }
-    h1 .small { font-size: 0.4em; }
-    h1 a { text-decoration: none }
-    h2 { font-size: 1.5em; color: #6bf17b; }
-    h3 { text-align: center; color: #6bf17b; }
-    a { color: #6bf17b; }
-    .description { font-size: 1.2em; margin-bottom: 30px; margin-top: 30px; font-style: italic;}
-    .download { float: right; }
-    pre { background: #000; color: #fff; padding: 15px;}
-    hr { border: 0; width: 80%; border-bottom: 1px solid #aaa}
-    .footer { text-align:center; padding-top:30px; font-style: italic; }
-  </style>
+h3{
+	margin: 25px 0 0;
+	text-shadow: 0 0 2px #555;
+}
+
+.button{
+	display: inline-block;
+    white-space: nowrap;
+    background-color: #ccc;
+    padding: 0 25px;
+    margin: 8px;
+    font: bold 16px/30px Arial, Helvetica;
+    text-decoration: none;
+    color: #333;
+    text-shadow: 0 1px 0 rgba(255,255,255,.8);
+	border-radius: 6px;
+	border-top: 1px solid #fff;
+	box-shadow: 0 0 0 1px #bbb;
+	background-image: linear-gradient(bottom, rgb(220,220,220) 50%, rgb(235,235,235) 50%);
+	background-image: -o-linear-gradient(bottom, rgb(220,220,220) 50%, rgb(235,235,235) 50%);
+	background-image: -moz-linear-gradient(bottom, rgb(220,220,220) 50%, rgb(235,235,235) 50%);
+	background-image: -webkit-linear-gradient(bottom, rgb(220,220,220) 50%, rgb(235,235,235) 50%);
+	background-image: -ms-linear-gradient(bottom, rgb(220,220,220) 50%, rgb(235,235,235) 50%);
+	
+	background-image: -webkit-gradient(
+		linear,
+		left bottom,
+		left top,
+		color-stop(0.5, rgb(220,220,220)),
+		color-stop(0.5, rgb(235,235,235))
+	);
+}
+
+.button:hover{box-shadow: 0 0 0 1px #bbb, inset 0 0 5px 5px rgba(255,255,255,.5);}
+
+.button:hover:before{background: rgba(0,0,0,.05);}
+
+.button:active{	
+	box-shadow: 0 0 0 1px #bbb, 0 -1px 0 1px #ddd, inset 0 0 5px 2px #eee;
+	position: relative;
+	top: 1px;
+}
+
+.button:before{
+	background: rgba(0,0,0,.07);
+	float: left;
+	width: 25px;
+	text-align: center;
+	font-size: 25px;
+	margin: 0 20px 0 -25px;
+	padding: 0 4px;
+	box-shadow: 1px 0 0 #fff, 2px 0 0 #bbb;
+	/* -webkit-border-radius: 6px 0 0 6px; */
+	pointer-events: none;
+}
+
+
+.delete:before{content: "\2718";}
+.save:before{content: "\2714";}
+.arrow:before{content: "\279C";}
+
+.button.lime{
+	color: #030;
+	box-shadow: 0 0 0 1px #99ba45;
+	background-image: linear-gradient(bottom, rgb(221,232,194) 50%, rgb(233,239,212) 50%);
+	background-image: -o-linear-gradient(bottom, rgb(221,232,194) 50%, rgb(233,239,212) 50%);
+	background-image: -moz-linear-gradient(bottom, rgb(221,232,194) 50%, rgb(233,239,212) 50%);
+	background-image: -webkit-linear-gradient(bottom, rgb(221,232,194) 50%, rgb(233,239,212) 50%);
+	background-image: -ms-linear-gradient(bottom, rgb(221,232,194) 50%, rgb(233,239,212) 50%);
+	
+	background-image: -webkit-gradient(
+		linear,
+		left bottom,
+		left top,
+		color-stop(0.5, rgb(221,232,194)),
+		color-stop(0.5, rgb(233,239,212))
+	);
+}
+.button.lime:hover{box-shadow: 0 0 0 1px #99ba45, inset 0 0 5px 2px rgba(130,173,27,.15);}
+.button.lime:active{box-shadow: 0 0 0 1px #99ba45, 0 -1px 0 1px #cbddb9, inset 0 0 5px 2px rgba(130,173,27,.15);}
+.button.lime:before{box-shadow: 1px 0 0 #fff, 2px 0 0 #99ba45;}
+
+
+.button.red{
+	color: #300;
+	box-shadow: 0 0 0 1px #ba4545;
+	background-image: linear-gradient(bottom, rgb(232,194,194) 50%, rgb(239,212,212) 50%);
+	background-image: -o-linear-gradient(bottom, rgb(232,194,194) 50%, rgb(239,212,212) 50%);
+	background-image: -moz-linear-gradient(bottom, rgb(232,194,194) 50%, rgb(239,212,212) 50%);
+	background-image: -webkit-linear-gradient(bottom, rgb(232,194,194) 50%, rgb(239,212,212) 50%);
+	background-image: -ms-linear-gradient(bottom, rgb(232,194,194) 50%, rgb(239,212,212) 50%);
+	
+	background-image: -webkit-gradient(
+		linear,
+		left bottom,
+		left top,
+		color-stop(0.5, rgb(232,194,194)),
+		color-stop(0.5, rgb(239,212,212))
+	);
+}
+.button.red:hover{box-shadow: 0 0 0 1px #ba4545, inset 0 0 5px 2px rgba(104,14,14,.1);}
+.button.red:active{box-shadow: 0 0 0 1px #ba4545, 0 -1px 0 1px #eacdcd, inset 0 0 5px 2px rgba(104,14,14,.15);}
+.button.red:before{box-shadow: 1px 0 0 #fff, 2px 0 0 #ba4545;}
+
+
+.button.blue{
+	color: #036;
+	box-shadow: 0 0 0 1px #459bba;
+	background-image: linear-gradient(bottom, rgb(194,222,232) 50%, rgb(212,232,239) 50%);
+	background-image: -o-linear-gradient(bottom, rgb(194,222,232) 50%, rgb(212,232,239) 50%);
+	background-image: -moz-linear-gradient(bottom, rgb(194,222,232) 50%, rgb(212,232,239) 50%);
+	background-image: -webkit-linear-gradient(bottom, rgb(194,222,232) 50%, rgb(212,232,239) 50%);
+	background-image: -ms-linear-gradient(bottom, rgb(194,222,232) 50%, rgb(212,232,239) 50%);
+	
+	background-image: -webkit-gradient(
+		linear,
+		left bottom,
+		left top,
+		color-stop(0.5, rgb(194,222,232)),
+		color-stop(0.5, rgb(212,232,239))
+	);
+}
+.button.blue:hover{box-shadow: 0 0 0 1px #459bba, inset 0 0 5px 5px rgba(255,255,255,.2);}
+.button.blue:active{box-shadow: 0 0 0 1px #459bba, 0 -1px 0 1px #cae3ec, inset 0 0 5px 5px rgba(220,220,220,.5);}
+.button.blue:before{box-shadow: 1px 0 0 #fff, 2px 0 0 #459bba;}
+</style>
 </head>
-
 <body>
-  <a href="https://github.com/TUNER88/CSS3-Split-Buttons"><img style="position: absolute; top: 0; right: 0; border: 0;" src="http://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub" /></a>
+	<a href="https://github.com/TUNER88/CSS3-Split-Buttons"><img style="position: absolute; top: 0; right: 0; border: 0;" src="http://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub" /></a>
+	<h1>CSS3 Split Buttons</h1>	
+	
+	<a href="" class="button">Button</a>
+	<a href="" class="button delete">Delete</a>
+	<a href="" class="button save">Save</a>
+	<a href="" class="button arrow">Arrow</a>
+	
+	<h3>Lime Buttons</h3>
+	<a href="" class="button lime">Button</a>
+	<a href="" class="button lime delete">Delete</a>
+	<a href="" class="button lime save">Save</a>
+	<a href="" class="button lime arrow">Arrow</a>
+	
+	<h3>Red Buttons</h3>
+	<a href="" class="button red">Button</a>
+	<a href="" class="button red delete">Delete</a>
+	<a href="" class="button red save">Save</a>
+	<a href="" class="button red arrow">Arrow</a>
 
-  <div id="container">
-
-    <div class="download">
-      <a href="https://github.com/TUNER88/CSS3-Split-Buttons/zipball/master">
-        <img border="0" width="90" src="https://github.com/images/modules/download/zip.png"></a>
-      <a href="https://github.com/TUNER88/CSS3-Split-Buttons/tarball/master">
-        <img border="0" width="90" src="https://github.com/images/modules/download/tar.png"></a>
-    </div>
-
-    <h1><a href="https://github.com/TUNER88/CSS3-Split-Buttons">CSS3-Split-Buttons</a>
-      <span class="small">by <a href="https://github.com/TUNER88">TUNER88</a></span></h1>
-
-    <div class="description">
-      CSS3 Buttons with icons
-    </div>
-
-    
-
-    
-
-    
-
-    
-
-    
-      <h2>Authors</h2>
-      <p>Anton Pauli (anton.pauli@gmail.com)<br/>      </p>
-    
-
-    
-      <h2>Contact</h2>
-      <p> (anton.pauli@gmail.com)<br/>      </p>
-    
-
-    <h2>Download</h2>
-    <p>
-      You can download this project in either
-      <a href="https://github.com/TUNER88/CSS3-Split-Buttons/zipball/master">zip</a> or
-      <a href="https://github.com/TUNER88/CSS3-Split-Buttons/tarball/master">tar formats.
-    </p>
-    <p>You can also clone the project with <a href="http://git-scm.com">Git</a>
-      by running:
-      <pre>$ git clone git://github.com/TUNER88/CSS3-Split-Buttons</pre>
-    </p>
-
-    <div class="footer">
-      get the source code on GitHub : <a href="https://github.com/TUNER88/CSS3-Split-Buttons">TUNER88/CSS3-Split-Buttons</a>
-    </div>
-
-  </div>
+	
+	<h3>Blue Buttons</h3>
+	<a href="" class="button blue">Button</a>
+	<a href="" class="button blue delete">Delete</a>
+	<a href="" class="button blue save">Save</a>
+	<a href="" class="button blue arrow">Arrow</a>
 
 </body>
 </html>
